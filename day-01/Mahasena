@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Optimize I/O operations
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int N;
+    if (!(cin >> N)) return 0;
+
+    int even_count = 0;
+    for (int i = 0; i < N; i++) {
+        int weapons;
+        cin >> weapons;
+        
+        // Check if the number of weapons is even
+        if (weapons % 2 == 0) {
+            even_count++;
+        }
+    }
+
+    int odd_count = N - even_count;
+
+    // Kattapa requires strictly greater even count
+    if (even_count > odd_count) {
+        cout << "READY FOR BATTLE" << endl;
+    } else {
+        cout << "NOT READY" << endl;
+    }
+
+    return 0;
+}
