@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Speed up I/O operations
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int T; 
+    // Read the number of test cases
+    if (!(cin >> T)) return 0;
+
+    while (T--) {
+        int X, Y;
+        // Read hours for Mon-Thu (X) and Friday (Y)
+        cin >> X >> Y;
+
+        // Calculate total: 4 days of X hours + 1 day of Y hours
+        int totalHours = (4 * X) + Y;
+
+        // Output the result followed by a newline
+        cout << totalHours << "\n";
+    }
+
+    return 0;
+}
