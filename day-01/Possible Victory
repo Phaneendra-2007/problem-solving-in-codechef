@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Variable declaration
+    int R, O, C;
+    
+    // Reading input: R (Target), O (Overs played), C (Current runs)
+    if (!(cin >> R >> O >> C)) return 0;
+
+    // Calculate remaining overs
+    int remaining_overs = 20 - O;
+
+    // Calculate maximum possible runs Team B can score
+    // 6 balls per over * 6 runs per ball = 36 runs per over
+    int max_remaining_runs = remaining_overs * 36;
+
+    // Calculate the total possible score Team B can reach
+    int total_possible_score = C + max_remaining_runs;
+
+    // Check if the total possible score is strictly greater than Team A's score R
+    if (total_possible_score > R) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
