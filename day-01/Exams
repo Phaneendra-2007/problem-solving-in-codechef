@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Optimize I/O operations
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int T;
+    // Read the number of test cases
+    if (!(cin >> T)) return 0;
+
+    while (T--) {
+        int X, Y, Z;
+        // Read X (schools), Y (students per school), and Z (passed students)
+        cin >> X >> Y >> Z;
+
+        // Calculate total students
+        int total_students = X * Y;
+
+        // Check if passed students are strictly greater than 50%
+        // Using 2 * Z > total_students to avoid floating point division
+        if (2 * Z > total_students) {
+            cout << "YES" << "\n";
+        } else {
+            cout << "NO" << "\n";
+        }
+    }
+
+    return 0;
+}
