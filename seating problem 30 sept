@@ -1,0 +1,14 @@
+# cook your dish here
+t=int(input())
+while t>0:
+    seen=[]
+    n,m,k=map(int,input().split())
+    arr=list(map(int,input().split()))
+    for i in range(1,n+1):
+        if i not in arr and i not in seen:
+            print(i,end=" ")
+            seen.append(i)
+        if len(seen)==k:
+            break
+    print()
+    t-=1
