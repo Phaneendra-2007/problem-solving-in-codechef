@@ -1,0 +1,17 @@
+t = int(input())
+
+while t > 0:
+    n = int(input())
+    arr = list(map(int, input().split()))
+
+    count = {}
+
+    for i in range(n):
+        x = arr[i] - i
+        count[x] = count.get(x, 0) + 1
+
+    maximum = max(count.values())
+
+    print(n - maximum)
+
+    t -= 1
